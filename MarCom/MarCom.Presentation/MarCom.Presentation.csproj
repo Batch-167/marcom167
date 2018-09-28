@@ -188,7 +188,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -203,6 +205,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\Souvenir\Index.cshtml" />
+    <Content Include="Views\Souvenir\_List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -211,7 +215,6 @@
     <Folder Include="Views\Menu\" />
     <Folder Include="Views\Product\" />
     <Folder Include="Views\Role\" />
-    <Folder Include="Views\Souvenir\" />
     <Folder Include="Views\Unit\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
@@ -222,6 +225,20 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MarCom.DataModel\MarCom.DataModel.csproj">
+      <Project>{bf2a3083-e248-4aef-817d-d9854d1ffe56}</Project>
+      <Name>MarCom.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarCom.Repository\MarCom.Repository.csproj">
+      <Project>{62571e69-106e-4b8e-bb14-6ab4bdcc799e}</Project>
+      <Name>MarCom.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarCom.ViewModel\MarCom.ViewModel.csproj">
+      <Project>{2a5fc8aa-926f-4fd7-a53a-2a70262428d1}</Project>
+      <Name>MarCom.ViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
