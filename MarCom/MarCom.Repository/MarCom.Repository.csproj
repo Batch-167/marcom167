@@ -42,6 +42,16 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MarCom.DataModel\MarCom.DataModel.csproj">
+      <Project>{bf2a3083-e248-4aef-817d-d9854d1ffe56}</Project>
+      <Name>MarCom.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarCom.ViewModel\MarCom.ViewModel.csproj">
+      <Project>{2a5fc8aa-926f-4fd7-a53a-2a70262428d1}</Project>
+      <Name>MarCom.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
