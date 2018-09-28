@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MarCom.Repository;
+using MarCom.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,5 +15,19 @@ namespace MarCom.Presentation.Controllers
         {
             return View();
         }
+
+        // GET: List
+        public ActionResult List()
+        {
+            return PartialView("_List", EmployeeRepo.Get());
+        }
+
+        // GET : Create
+        public ActionResult Create()
+        {
+            return PartialView("_Create", new EmployeeViewModel());
+        }
+
+
     }
 }
