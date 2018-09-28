@@ -92,9 +92,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MarCom.DataModel\MarCom.DataModel.csproj">
+      <Project>{bf2a3083-e248-4aef-817d-d9854d1ffe56}</Project>
+      <Name>MarCom.DataModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MarCom.Presentation\MarCom.Presentation.csproj">
       <Project>{E553D1B1-347A-479E-B590-BA20E7C9A08B}</Project>
       <Name>MarCom.Presentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarCom.Repository\MarCom.Repository.csproj">
+      <Project>{62571e69-106e-4b8e-bb14-6ab4bdcc799e}</Project>
+      <Name>MarCom.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
