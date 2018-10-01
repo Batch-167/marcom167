@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "Unit";
+﻿
+@{
+    ViewBag.Title = "User";
 }
 
 @Styles.Render("~/AdminLTE/plugins/datatables/css")
@@ -65,9 +66,9 @@
         });
 
         $("#btn-new").click(function () {
-            $(".modal-title").html("Add new Unit");
+            $(".modal-title").html("Add new User");
             $.ajax({
-                url: '@Url.Action("Add", "Unit")',
+                url: '@Url.Action("Add", "User")',
                 type: 'get',
                 success: function (result) {
                     $(".modal-body").html(result);
@@ -78,7 +79,7 @@
 
         function GetList() {
             $.ajax({
-                url: '@Url.Action("List", "Unit")',
+                url: '@Url.Action("List", "User")',
                 type: 'get',
                 success: function (result) {
                     $("#table-list").html(result);
