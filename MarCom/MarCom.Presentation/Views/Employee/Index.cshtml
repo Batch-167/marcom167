@@ -1,22 +1,44 @@
-﻿<h3>List Employee</h3>
+﻿@model MarCom.ViewModel.EmployeeViewModel
+
+@{
+    ViewBag.Title = "List Employee";
+}
 
 @Styles.Render("~/ AdminLTE / plugins / datatables / css")
 <div class="panel panel-danger">
     <div class="panel-heading">
         <div class="row">
-            <div class="col-md-offset-11">
-                <button type="button" id="btn-new" class="btn btn-primary btn-sm">Add</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-offset-11">
-                <button type="button" id="btn-new" class="btn btn-primary btn-sm">Search</button>
+            <div class="col-offset-11">
+                <h3>List Employee</h3>
             </div>
         </div>
     </div>
     <div class="panel-body">
-
         <div class="row">
+            <div class="col-lg-offset-11">
+                <button type="button" id="btn-new" class="btn btn-primary btn-sm">Add</button>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">
+                    <input type="text" class="form-control" placeholder="Employee ID Number" />
+                </div>
+                <div class="col-xs-2">
+                    <input type="text" class="form-control" placeholder="Employee Name" />
+                </div>
+                <div class="col-xs-2">
+                    <input type="text" class="form-control" placeholder="Select Company Name" />
+                </div>
+                <div class="col-xs-2">
+                    <input type="text" class="form-control" placeholder="Created" />
+                </div>
+                <div class="col-xs-2">
+                    <input type="text" class="form-control" placeholder="Created By" />
+                </div>
+                <div class="col-lg-offset-11">
+                    <button type="button" id="btn-new" class="btn btn-warning btn-sm">Search</button>
+                </div>
+
+            </div>
             <div class="col-lg-12" id="table-list">
                 <h3>Loading...</h3>
             </div>
@@ -30,6 +52,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Modal title</h4>
             </div>
             <div class="modal-body">
                 <p>One fine body&hellip;</p>
@@ -37,3 +60,47 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+    @section Scripts{
+    @Scripts.Render("~/AdminLTE/plugins/datatables/js")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            GetList();
+        });
+
+        $("#btn-new").click(function () {
+            $(".modal-title").html("Add Employee");
+            $.ajax({
+                url: '@Url.Action("Create","Employee")',
+                type: 'get',
+                success: function (result) {
+                    $(".modal-body").html(result);
+                    $(".modal").modal("show");
+                }
+            });
+        });
+
+        function GetList() {
+            $.ajax({
+                url: '@Url.Action("List","Employee")',
+                type: 'get',
+                success: function (result) {
+                    $("#table-list").html(result);
+                },
+                error: function (err) {
+                    $("#table-list").tml(err);
+                }
+            });
+        }
+    </script>
+    }
+
+
+
+
+
+
+
+
+
+

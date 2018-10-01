@@ -1053,6 +1053,8 @@
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Employee\_List.cshtml" />
     <Content Include="Views\Employee\_Create.cshtml" />
+    <Content Include="Views\Employee\_Edit.cshtml" />
+    <Content Include="Views\Employee\_Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
