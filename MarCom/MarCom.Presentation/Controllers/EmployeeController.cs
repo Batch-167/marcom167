@@ -22,6 +22,12 @@ namespace MarCom.Presentation.Controllers
             return PartialView("_List", EmployeeRepo.Get());
         }
 
+        public ActionResult View(int id)
+        {
+            EmployeeViewModel model = EmployeeRepo.GetById(id);
+            return PartialView("_View", model);
+        }
+
         // GET : Create
         public ActionResult Create()
         {
