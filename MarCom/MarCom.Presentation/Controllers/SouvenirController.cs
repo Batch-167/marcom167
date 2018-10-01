@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarCom.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,11 @@ namespace MarCom.Presentation.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult List()
+        {
+            return PartialView("_List",SouvenirRepo.Get());
         }
     }
 }
