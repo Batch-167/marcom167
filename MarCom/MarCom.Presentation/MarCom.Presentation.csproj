@@ -1053,13 +1053,21 @@
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Employee\_List.cshtml" />
     <Content Include="Views\Employee\_Create.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\_List.cshtml" />
+    <Content Include="Views\Product\_Create.cshtml" />
+    <Content Include="Views\Product\_Edit.cshtml" />
+    <Content Include="Views\Product\_Delete.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\_List.cshtml" />
+    <Content Include="Views\Role\_Create.cshtml" />
+    <Content Include="Views\Role\_Edit.cshtml" />
+    <Content Include="Views\Role\_Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Menu\" />
-    <Folder Include="Views\Product\" />
-    <Folder Include="Views\Role\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
