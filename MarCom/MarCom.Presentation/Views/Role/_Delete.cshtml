@@ -1,0 +1,35 @@
+﻿@model MarCom.ViewModel.ProductViewModel
+@{
+    Layout = "";
+}
+<h3>Delete data?</h3>
+<div>
+
+    @using (Html.BeginForm("Delete", "Role", FormMethod.Post, new { id = "form-delete", name = "form-delete" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" id="btn-delete" value="Delete" class="btn btn-danger" data-id="@Model.Id" />
+            <input type="button" value="Cancel" class="btn btn-warning" data-dismiss="modal" />
+        </div>
+    }
+</div>
+
+<script type="text/javascript">
+        $("#btn-delete").click(function () {
+            $.ajax({
+                url: '@Url.Action("DeleteConfirm","Role")',
+                type: 'post',
+                data: { id: $(this).attr('data-id') },
+                success: function (result) {
+                    if (result.success) {
+                         alert("Data Save! New product has been add with code" + result.entity.Code + "!");
+                        $(".modal").modal("hide");
+                        GetList();
+                    } else {
+                        alert("Eror! Table has not been saved.");
+                    }
+                }
+            });
+        }) ;
+</script>
